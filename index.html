@@ -5,11 +5,13 @@
 	<title>git的使用</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<style>
+		*{
+			box-sizing: border-box;
+		}
 		section{
-			margin: 20px 0;
+			margin: 20px 0 20px 20px;
 		}
 		main,h2,p,span{
-			margin-left:10px;
 			padding-left: 10px;
 			position: relative;
 		}
@@ -24,6 +26,14 @@
 		p{
 			text-indent: 10px;
 		}
+		.del{
+			text-decoration: line-through;
+		}
+		main{
+			display: inline-block;
+			width: 50%;
+			float: left;
+		}
 	</style>
 </head>
 <body>
@@ -35,10 +45,51 @@
 		</section>
 		<section>
 			<h2>add files to repository</h2>
-			<p>git add 添加所以文件进提交列表(.代表提交全部)</p>
-			<p>git commit -m提交列表中的文件(-m'输入提交注释')</p>
+			<p>git add <'file'>添加所以文件进提交列表(.代表提交全部)</p>
+			<p>git commit -m<'xx'>提交列表中的文件(-m'输入提交注释')</p>
 			<p>git status 查看列表中文件状态</p>
-			<p>git diff 查看修改内容</p>
+			<p class="del">git diff 查看修改内容</p>
+		</section>
+		<section>
+			<h2>version roll back</h2>
+			<p>git log 查看版本提交信息</p>
+			<p>git log --pretty=oneline 查看版本提交信息(版本信息成一行)</p>
+			<p>git reset --hadr <'HEAD^'>回退版本(回退第n个版本HEAD~n)</p>
+			<p>git reset --hadr <'ID'>回退到ID版本</p>
+			<p>git reflog 查看操作记录</p>
+		</section>
+		<section>
+			<h2>other operation</h2>
+			<p>git checkout -- <'filename'>回到最近一个版本</p>
+			<p>git rm <'filename'>删除版本库中的文件</p>
+		</section>
+	</main>
+	<main>
+		<h1>branch分支</h1>
+		<section>
+			<h2>branch operation分支操作</h2>
+			<p>git branch <'dev'>创建dev分支</p>
+			<p>git checkout <'dev'>切换到dev分支</p>
+			<p>git checkout -b <'dev'>创建并切换到dev分支</p>
+			<p>git merge <'dev'>把dev分支合并到master主支上</p>
+			<p>git branch -d <'dev'>删除dev分支</p>
+			<p>git branch -D <'dev'>强行删除dev分支</p>
+		</section>
+		<section>
+			<h2>临时操作</h2>
+			<p>git stash临时存储工作区</p>
+			<p>git stash list查看临时存储的工作区</p>
+			<p>git stash apply <'number'>恢复number工作区</p>
+			<p>git stash drop <'number'>删除临时存储的number工作区</p>
+			<p>git stash pop <'number'>恢复number工作区并将临时存储内容删除</p>
+		</section>
+		<section>
+			<h2>tag标签</h2>
+			<p>git tag <'tag name'> 为最新commit加标签信息</p>
+			<p>git tag <'commit ID'>为某个commit加标签信息</p>
+			<p>git show <'tag name'>查看标签信息</p>
+			<p>git tag -a <'tag name'> -m <'tag text'>为tag name的标签添加说明tag text</p>
+			<p>git tag -d <'tag name'>删除tag name标签</p>
 		</section>
 	</main>
 </body>

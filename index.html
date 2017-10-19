@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>git的使用</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<style>
+		section{
+			margin: 20px 0;
+		}
+		main,h2,p,span{
+			margin-left:10px;
+			padding-left: 10px;
+			position: relative;
+		}
+		h2:before{
+			content: '';
+			border-top: 10px solid #ccc;
+			border-right: 10px solid transparent;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		p{
+			text-indent: 10px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>git command</h1>
+		<section>
+			<h2>init repository</h2>
+			<p>git init 创建版本库</p>
+		</section>
+		<section>
+			<h2>add files to repository</h2>
+			<p>git add 添加所以文件进提交列表</p>
+			<p>git commit 提交列表中的文件</p>
+			<p>git status 查看列表中文件状态</p>
+			<p>git diff 查看修改内容</p>
+		</section>
+	</main>
+</body>
+</html>
